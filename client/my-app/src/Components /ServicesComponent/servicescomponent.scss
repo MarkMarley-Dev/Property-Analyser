@@ -1,0 +1,58 @@
+@use "../../sass/components/main.scss" as *;
+@use "../../sass/abstracts/variables" as *;
+@use "../../sass/abstracts/mixins" as *;
+
+.services {
+  &__subtitle {
+    color: $lightGold;
+    margin: 1rem 0;
+  }
+  &__subtitle:hover {
+    color: $white;
+    background-color: $lightGold;
+    border: 1px solid $darkGold;
+  }
+  &__offer {
+    padding: 0 2rem;
+    font-size: 1.2rem;
+  }
+  &__helps {
+    padding: 0 2rem;
+    font-size: 1.2rem;
+  }
+  @include mediaQuery(medium) {
+    &__info {
+      display: flex;
+    }
+    &__subtitle {
+      font-size: 2.5rem;
+      margin: 2rem 2rem;
+      padding-bottom: 0.2rem;
+    }
+    &__offer {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+    &__helps {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+    &__video {
+      height: 35rem;
+    }
+  }
+  @include mediaQuery(large) {
+    &__subtitle {
+      font-size: 3.2rem;
+      padding-bottom: 0.4rem;
+    }
+    &__offer {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+    &__helps {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+}
