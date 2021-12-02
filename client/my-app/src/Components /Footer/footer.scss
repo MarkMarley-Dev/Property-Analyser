@@ -1,0 +1,31 @@
+@use "../../sass/components/main.scss" as *;
+@use "../../sass/abstracts/variables" as *;
+@use "../../sass/abstracts/mixins" as *;
+
+.footer {
+  &__subtitle {
+    color: $lightGold;
+  }
+  &__subtitle:hover {
+    color: $white;
+    background-color: $lightGold;
+    border: 1px solid $darkGold;
+    padding-top: 0 0.2rem;
+  }
+  &__linkedin-logo-ctn {
+    justify-content: center;
+  }
+  &__linkedin-logo {
+    background-image: url("../../Assets/icons/LI-Logo.png");
+    background-position: center;
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+//  &__info-ctn {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }

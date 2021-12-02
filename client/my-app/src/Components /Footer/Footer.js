@@ -1,3 +1,4 @@
+import "./footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -8,14 +9,29 @@ const Footer = () => {
           <p className="footer__text"> Phone: 07447821328</p>
         </div>
         <div className="footer__address">
-          <p className="footer__text"> Address: Endlesham Road </p>
-          <p className="footer__text"> Sw12-8JX Balham LDN</p>
+          <h3 className="footer__subtitle">Address</h3>
+          <p className="footer__text"> Endlesham Road, Sw12-8JX </p>
+          <p className="footer__text"> Balham London</p>
         </div>
         <div className="footer__socials">
-          <p className="footer__text"> </p>
-          <p className="footer__text"> </p>
+          <div className="footer__git-logo-ctn">
+            <div className="footer__git-logo">
+              <h3 className="footer__subtitle">Socials</h3>
+              <p className="footer__text"> https://github.com/MarkMarley-Dev</p>
+            </div>
+          </div>
+          <div className="footer__linkedin-ctn">
+            <div className="footer__linkedin-logo"></div>
+            <p className="footer__text">
+              https://www.linkedin.com/in/mark-marley/
+            </p>
+          </div>
         </div>
       </section>
+      <p className="footer__to-top">"Please Sir Take me back to the top!"</p>
+      <p className="footer__copyright">
+        © All right reserved, Property Right Belong to Mark Marley{" "}
+      </p>
     </footer>
   );
 };
