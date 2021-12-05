@@ -7,7 +7,7 @@ const PageHeader = () => {
         <p className="pageHeader__logo"> Property Analyser</p>
       </div>
       <div className="pageHeader__nav-ctn">
-        <div className="pageHeader__nav-services">Services</div>
+        <div className="pageHeader__nav-services">Home</div>
 
         <div className="pageHeader__nav-search">Search</div>
         <div className="pageHeader__nav-compare">Compare</div>
