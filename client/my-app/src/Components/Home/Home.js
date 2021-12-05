@@ -1,6 +1,6 @@
 import "./home.scss";
 import PageHeader from "../PageHeader/PageHeader";
-import Hero from "../Hero/Hero";
+import Hero from "../Heros/HomeHero/HomeHero";
 import Footer from "../Footer/Footer";
 const Home = () => {
   return (

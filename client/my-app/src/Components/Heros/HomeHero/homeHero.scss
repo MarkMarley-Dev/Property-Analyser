@@ -1,13 +1,13 @@
-@use "../../sass/components/main.scss" as *;
-@use "../../sass/abstracts/variables" as *;
-@use "../../sass/abstracts/mixins" as *;
+@use "../../../sass/components/main.scss" as *;
+@use "../../../sass/abstracts/variables" as *;
+@use "../../../sass/abstracts/mixins" as *;
 
 .hero {
   &__ctn {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    background-image: url("../../Assets/images/london-skyline.jpg");
+    background-image: url("../../../Assets/images/london-skyline.jpg");
     padding-bottom: 3rem;
     background-position: center;
     background-size: cover;

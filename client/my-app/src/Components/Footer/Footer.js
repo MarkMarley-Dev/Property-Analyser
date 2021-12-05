@@ -1,5 +1,7 @@
 import "./footer.scss";
 import React from "react";
+import { Link } from "react-router-dom";
+import { ExternalLink } from "react-external-link";
 
 const Footer = () => {
   return (
@@ -22,11 +24,20 @@ const Footer = () => {
           <h3 className="footer__subtitle">Socials</h3>
           <div className="footer__bottom-ctn">
             <div className="footer__git-logo-ctn">
-              <div className="footer__git-logo"></div>
+              <a
+                href="https://github.com/MarkMarley-Dev
+
+"
+              >
+                <div className="footer__git-logo"></div>
+              </a>
               <p className="footer__text"> https://github.com/MarkMarley-Dev</p>
             </div>
+
             <div className="footer__linkedin-ctn">
-              <div className="footer__linkedin-logo"></div>
+              <a href="https://www.linkedin.com/in/mark-marley/">
+                <div className="footer__linkedin-logo"></div>
+              </a>
               <p className="footer__text">
                 https://www.linkedin.com/in/mark-marley/
               </p>
