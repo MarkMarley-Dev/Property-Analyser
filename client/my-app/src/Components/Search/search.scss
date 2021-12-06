@@ -1,0 +1,54 @@
+@use "../../sass/abstracts/mixins" as *;
+@use "../../sass/components/main.scss" as *;
+@use "../../sass/abstracts/variables" as *;
+
+.search {
+  &__ctn {
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__price,
+  &__hmo,
+  &__demand-yield {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 1.4rem;
+    // width: 30%;
+    color: $lightGold;
+    // background-color: $lightgrey;
+    border: 2px solid $lightGold;
+
+    text-align: center;
+  }
+  &__price-ctn,
+  &__hmo-ctn,
+  &__demand-yield-ctn {
+    width: 30%;
+
+    color: $lightGold;
+    background-color: $lightgrey;
+  }
+  &__price:hover,
+  &__hmo:hover,
+  &__demand-yield:hover {
+    background-color: $lightGold;
+    color: $white;
+    border: 2px solid $darkGold;
+    // padding-right: 2rem;
+    // padding-left: 2rem;
+    border-radius: 5px;
+    padding-bottom: 0;
+  }
+  //   &__price {
+  //   }
+  //   &__hmo {
+  //   }
+  //   &__demand-yield {
+  //     // margin-right: 2rem;
+  //   }
+}

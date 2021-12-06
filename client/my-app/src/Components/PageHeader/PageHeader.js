@@ -17,7 +17,7 @@ const PageHeader = () => {
         <Link to="/search">
           <div className="pageHeader__nav-search">Search</div>
         </Link>
-        <div className="pageHeader__nav-compare">Compare</div>
+        {/* <div className="pageHeader__nav-compare">Compare</div> */}
         <div className="pageHeader__nav-login">Log In</div>
       </div>
     </header>

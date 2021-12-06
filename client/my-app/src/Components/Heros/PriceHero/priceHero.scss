@@ -3,7 +3,7 @@
 @use "../../../sass/abstracts/mixins" as *;
 
 .hero {
-  &__home-ctn {
+  &__price-ctn {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
@@ -15,25 +15,25 @@
     height: 30rem;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
   }
-  &__home-title {
-    font-size: 5rem;
+  &__price-title {
+    font-size: 4rem;
     padding-left: 2rem;
     color: $white;
     font-weight: 300;
   }
-  &__home-title:hover {
+  &__price-title:hover {
     color: $lightGold;
   }
   @include mediaQuery(medium) {
-    &__home-ctn {
+    &__price-ctn {
       height: 35rem;
     }
-    &__home-title {
+    &__price-title {
       font-size: 6rem;
     }
   }
   @include mediaQuery(large) {
-    &__home-ctn {
+    &__price-ctn {
       height: 45rem;
     }
   }
