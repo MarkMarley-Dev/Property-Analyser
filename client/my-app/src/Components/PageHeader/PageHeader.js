@@ -5,7 +5,7 @@ import Home from "../Home/Home";
 const PageHeader = () => {
   return (
     <header className="pageHeader">
-      <Link to={"/"}>
+      <Link to="/">
         <div className="pageHeader__logo-ctn">
           <p className="pageHeader__logo"> Property Analyser</p>
         </div>

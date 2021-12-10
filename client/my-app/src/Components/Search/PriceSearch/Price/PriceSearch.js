@@ -12,7 +12,7 @@ const PriceSearch = () => {
       <section className="search">
         <h2 className="search__title"> Please choose your desired search </h2>
         <div className="search__options">
-          <Link to="">
+          <Link to="/avg">
             <article className="search__avg">
               <h3 className="search__avg-subtitle"> Price Avg </h3>
               <p className="search__avg-text">
@@ -21,7 +21,7 @@ const PriceSearch = () => {
               </p>
             </article>
           </Link>
-          <Link to="">
+          <Link to={"/pricepersqft"}>
             <article className="search__per-sqft">
               <h3 className="search__per-sqft-subtitle"> Prices per Sq-Ft</h3>
               <p className="search__avg-text">
