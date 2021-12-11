@@ -14,7 +14,7 @@ const PriceSearch = () => {
         <div className="search__options">
           <Link to="/avg">
             <article className="search__avg">
-              <h3 className="search__avg-subtitle"> Price Avg </h3>
+              <h3 className="search__avg-subtitle"> For Sale - Price Avg </h3>
               <p className="search__avg-text">
                 Option returns statistical average and confidence intervals of
                 live property asking prices.
@@ -23,10 +23,31 @@ const PriceSearch = () => {
           </Link>
           <Link to={"/pricepersqft"}>
             <article className="search__per-sqft">
-              <h3 className="search__per-sqft-subtitle"> Prices per Sq-Ft</h3>
+              <h3 className="search__per-sqft-subtitle">
+                {" "}
+                For Sale - Prices per Sq-Ft
+              </h3>
               <p className="search__avg-text">
                 Option returns statistical average and confidence intervals of
                 live property asking prices per square foot.
+              </p>
+            </article>
+          </Link>
+          <Link to="/soldAvg">
+            <article className="search__avg">
+              <h3 className="search__avg-subtitle"> Sold - Price Avg </h3>
+              <p className="search__avg-text">
+                Option returns statistical average and confidence intervals of
+                live property asking prices.
+              </p>
+            </article>
+          </Link>
+          <Link to="/soldpricepersqft">
+            <article className="search__per-sqft">
+              <h3 className="search__avg-subtitle"> Sold - Price Per SqFt </h3>
+              <p className="search__avg-text">
+                Option returns statistical average and confidence intervals of
+                live property asking prices.
               </p>
             </article>
           </Link>

@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
-import "./avgPrice.scss";
+import "./soldAvgPrice.scss";
+import PageHeader from "../../../PageHeader/PageHeader";
+import Footer from "../../../Footer/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Bar } from "react-chartjs-2";
 
-const AvgPriceBarChart = () => {
+const SoldAvgPrice = () => {
   const [data, setData] = useState([]);
   const [text, setText] = useState("");
   const [num, setNum] = useState("");
@@ -15,7 +17,7 @@ const AvgPriceBarChart = () => {
     e.preventDefault();
     try {
       const res = await axios.get(
-        `https://api.propertydata.co.uk/prices?key=TORGPUR3KY&postcode=${text}&bedrooms=${num}`
+        `https://api.propertydata.co.uk/sold-prices?key=TORGPUR3KY&postcode=${text}&bedrooms=${num}`
       );
       const arrData = Object.entries(res.data.data);
       setData(arrData);
@@ -43,7 +45,7 @@ const AvgPriceBarChart = () => {
 
   // if (!data.length) return <p>Loading...</p>;
 
-  const percentile = data.slice(3, data.length - 1);
+  const percentile = data.slice(5, data.length - 1);
 
   const labels = percentile.map((label) => label[0]);
 
@@ -102,21 +104,22 @@ const AvgPriceBarChart = () => {
         draggable
         pauseOnHover
       />
-      <div className="avgPrice__ctn">
-        <h2 className="avgPrice__page-title">Average Price Search</h2>
-        <div className="avgPrice__title-info-ctn">
-          <div className="avgPrice__title-info">
-            <p className="avgPrice__title-info-text">
-              Welcome to the Average Price Search, below are the search
+      <PageHeader />
+      <div className="soldPrice__ctn">
+        <h2 className="soldPrice__page-title">Average Sold Price Search</h2>
+        <div className="soldPrice__title-info-ctn">
+          <div className="soldPrice__title-info">
+            <p className="soldPrice__title-info-text">
+              Welcome to the Average Sold Price Search, below are the search
               parameters.
             </p>
-            <p className="avgPrice__title-info-text">
+            <p className="soldPrice__title-info-text">
               Postcode must be entered without spaces & bedrooms can be only
               selected between 1 - 5 otherwise data won't be returned.
             </p>
           </div>
-          <form onSubmit={fetchData} className="avgPrice__form">
-            <label className="avgPrice__form-label">
+          <form onSubmit={fetchData} className="soldPrice__form">
+            <label className="soldPrice__form-label">
               {" "}
               Please Enter Postcode Below
             </label>
@@ -124,9 +127,9 @@ const AvgPriceBarChart = () => {
               placeholder="Postcode"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="avgPrice__form-input-postcode"
+              className="soldPrice__form-input-postcode"
             />
-            <label className="avgPrice__form-label">
+            <label className="soldPrice__form-label">
               {" "}
               Please Enter the amount of rooms Below
             </label>
@@ -135,17 +138,20 @@ const AvgPriceBarChart = () => {
               value={num}
               onChange={(e) => setNum(e.target.value)}
               placeholder="1 - 5"
-              className="avgPrice__form-input-rooms"
+              className="soldPrice__form-input-rooms"
             />
-            <button className="avgPrice__form-search-btn" type="submit">
+            <button className="soldPrice__form-search-btn" type="submit">
               Search
             </button>
           </form>
         </div>
         {data.length ? (
-          <div className="avgPrice__barchart">
+          <div className="soldPrice__barchart">
             <Bar data={dataBar} options={{ maintainAspectRatio: false }} />
-            <button onClick={() => setData([])} className="avgPrice__clear-btn">
+            <button
+              onClick={() => setData([])}
+              className="soldPrice__clear-btn"
+            >
               Clear Data
             </button>
           </div>
@@ -153,7 +159,8 @@ const AvgPriceBarChart = () => {
           <p></p>
         )}
       </div>
+      <Footer />
     </>
   );
 };
-export default AvgPriceBarChart;
+export default SoldAvgPrice;

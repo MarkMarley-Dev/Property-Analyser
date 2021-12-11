@@ -3,6 +3,8 @@ import { useState } from "react";
 import "./pricePerSqFt.scss";
 import PageHeader from "../../../PageHeader/PageHeader";
 import Footer from "../../../Footer/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Bar } from "react-chartjs-2";
 
@@ -13,20 +15,30 @@ const PricePerSqFtBar = () => {
 
   const fetchData = async (e) => {
     e.preventDefault();
-    const res = await axios.get(
-      `https://api.propertydata.co.uk/prices-per-sqf?key=TORGPUR3KY&postcode=${text}`
-    );
-    const arrData = Object.entries(res.data.data);
-    setData(arrData);
-    setText("");
-    setNum("");
+
+    try {
+      const res = await axios.get(
+        `https://api.propertydata.co.uk/prices-per-sqf?key=TORGPUR3KY&postcode=${text}`
+      );
+      const arrData = Object.entries(res.data.data);
+      setData(arrData);
+      setText("");
+      setNum("");
+    } catch (error) {
+      toast.error(
+        " ⛔️ Please Ensure You have Entered Your Search Queries Correctly ⛔️",
+        {
+          position: "top-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }
+      );
+    }
   };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // if (!data.length) return <p>Loading...</p>;
 
   const percentile = data.slice(3, data.length - 1);
 
@@ -76,6 +88,17 @@ const PricePerSqFtBar = () => {
 
   return (
     <>
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <PageHeader />
       <div className="perSqFt__ctn">
         <h2 className="perSqFt__page-title">Prices Per SqFt</h2>
