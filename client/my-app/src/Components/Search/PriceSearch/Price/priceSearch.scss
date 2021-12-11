@@ -11,71 +11,71 @@
     padding-bottom: 0.5rem;
     border-bottom: 2px solid $lightGold;
   }
-  &__options {
-    margin: 0 1.5rem;
-    display: flex;
+  // &__options {
+  //   margin: 0 1.5rem;
+  //   display: flex;
 
-    align-items: center;
-    overflow-x: scroll;
-  }
-  &__avg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  //   align-items: center;
+  //   overflow-x: scroll;
+  // }
+  // &__avg {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
 
-    background-image: url("../../../../Assets/images/london-skyline.jpg");
-    margin-bottom: 3rem;
+  //   background-image: url("../../../../Assets/images/london-skyline.jpg");
+  //   margin-bottom: 3rem;
 
-    background-position: center;
-    background-size: cover;
+  //   background-position: center;
+  //   background-size: cover;
 
-    height: 15rem;
-    width: 29rem;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
-    border-radius: 50px;
-  }
-  &__avg:hover,
-  &__per-sqft:hover {
-    border: 5px solid $lightGold;
-    color: $lightGold;
-  }
+  //   height: 15rem;
+  //   width: 29rem;
+  //   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+  //   border-radius: 50px;
+  // }
+  // &__avg:hover,
+  // &__per-sqft:hover {
+  //   border: 5px solid $lightGold;
+  //   color: $lightGold;
+  // }
 
-  &__avg-subtitle,
-  &__per-sqft-subtitle {
-    color: $white;
-    padding: 1rem 2rem;
-  }
-  &__avg-text {
-    color: $white;
-    padding: 1rem 2rem;
-  }
+  // &__avg-subtitle,
+  // &__per-sqft-subtitle {
+  //   color: $white;
+  //   padding: 1rem 2rem;
+  // }
+  // &__avg-text {
+  //   color: $white;
+  //   padding: 1rem 2rem;
+  // }
 
-  &__avg-text:hover {
-    color: $lightGold;
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
-  &__avg-subtitle:hover,
-  &__per-sqft-subtitle:hover {
-    color: $lightGold;
-    font-weight: 600;
-    font-size: 1.7rem;
-  }
-  &__per-sqft {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  // &__avg-text:hover {
+  //   color: $lightGold;
+  //   font-weight: 600;
+  //   font-size: 1.2rem;
+  // }
+  // &__avg-subtitle:hover,
+  // &__per-sqft-subtitle:hover {
+  //   color: $lightGold;
+  //   font-weight: 600;
+  //   font-size: 1.7rem;
+  // }
+  // &__per-sqft {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
 
-    background-image: url("../../../../Assets/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
-    margin-bottom: 3rem;
-    margin-left: 1.5rem;
-    background-position: center;
-    background-size: cover;
+  //   background-image: url("../../../../Assets/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
+  //   margin-bottom: 3rem;
+  //   margin-left: 1.5rem;
+  //   background-position: center;
+  //   background-size: cover;
 
-    height: 15rem;
-    height: 15rem;
-    width: 29rem;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
-    border-radius: 50px;
-  }
+  //   height: 15rem;
+  //   height: 15rem;
+  //   width: 29rem;
+  //   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+  //   border-radius: 50px;
+  // }
 }

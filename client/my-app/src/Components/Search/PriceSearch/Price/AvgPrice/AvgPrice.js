@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PageHeader from "../../../../PageHeader/PageHeader";
 import Footer from "../../../../Footer/Footer";
-import { Bar } from "react-chartjs-2";
+// import { Bar } from "react-chartjs-2";
 import AvgPriceBarChart from "./AvgPriceBar";
 function AvgPrice() {
-  const [data, setData] = useState([]);
-  const [query, setQuery] = useState("");
-  const [dataOne, setDataOne] = useState("");
+  // const [data, setData] = useState([]);
+  // const [query, setQuery] = useState("");
+  // const [dataOne, setDataOne] = useState("");
 
-  // const API_URL = (query) =>
+  // // const API_URL = (query) =>
   //   `https://api.propertydata.co.uk/prices?key=TORGPUR3KY&postcode=${query}`;
 
   // const fetchData = async () => {

@@ -4,34 +4,50 @@
 
 .search {
   &__ctn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
     text-align: center;
     padding-bottom: 2rem;
     padding-top: 2rem;
   }
-  &__header {
+  &__options {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
   }
-  &__price,
-  &__hmo,
-  &__demand-yield {
+  &__price-title,
+  &__hmo-title,
+  &__demand-yield-title {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     // width: 30%;
-    color: $lightGold;
+    color: $white;
     // background-color: $lightgrey;
-    border: 2px solid $lightGold;
+    border-bottom: 5px solid $lightGold;
+
+    margin-bottom: 1.5rem;
 
     text-align: center;
+  }
+  &__price-text {
+    color: $white;
+    font-size: 1.3rem;
   }
   &__price-ctn,
   &__hmo-ctn,
   &__demand-yield-ctn {
-    width: 30%;
-
+    width: 20rem;
+    border: 5px solid $lightGold;
+    margin: 1rem 0;
     color: $lightGold;
-    background-color: $lightgrey;
+    background-image: url("../../Assets/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
   }
   &__price:hover,
   &__hmo:hover,
@@ -43,6 +59,76 @@
     // padding-left: 2rem;
     border-radius: 5px;
     padding-bottom: 0;
+  }
+
+  &__price {
+    margin-bottom: 2rem;
+  }
+
+  &__options-price {
+    margin: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+  }
+  &__avg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 3rem;
+    background-image: url("../../Assets/images/london-skyline.jpg");
+    background-position: center;
+    background-size: cover;
+
+    height: 15rem;
+    width: 29rem;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
+  }
+  &__avg:hover,
+  &__per-sqft:hover {
+    border: 5px solid $lightGold;
+    color: $lightGold;
+  }
+
+  &__avg-subtitle,
+  &__per-sqft-subtitle {
+    color: $white;
+    padding: 1rem 2rem;
+  }
+  &__avg-text {
+    color: $white;
+    padding: 1rem 2rem;
+  }
+
+  &__avg-text:hover {
+    color: $lightGold;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  &__avg-subtitle:hover,
+  &__per-sqft-subtitle:hover {
+    color: $lightGold;
+    font-weight: 600;
+    font-size: 1.7rem;
+  }
+  &__per-sqft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url("../../Assets/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
+    margin-bottom: 3rem;
+    margin-left: 1.5rem;
+    background-position: center;
+    background-size: cover;
+
+    height: 15rem;
+    height: 15rem;
+    width: 29rem;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
   }
   //   &__price {
   //   }
