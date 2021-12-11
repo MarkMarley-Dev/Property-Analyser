@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import AvgPrice from "./Components/Search/PriceSearch/Price/AvgPrice/AvgPrice";
 import PricePerSqft from "./Components/Search/PriceSearch/PricePerSq/PricePerSqFtBar";
 import SoldAvgPrice from "./Components/Search/PriceSearch/SoldAvgPrice/SoldAvgPrice";
+import SoldPerSqFt from "./Components/Search/PriceSearch/SoldPerSqFt/SoldPerSqFt";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/avg" component={AvgPrice}></Route>
         <Route path="/pricepersqft" component={PricePerSqft}></Route>
         <Route path="/soldAvg" component={SoldAvgPrice}></Route>
+        <Route path="/soldpricepersqft" component={SoldPerSqFt}></Route>
       </Switch>
     </BrowserRouter>
   );
