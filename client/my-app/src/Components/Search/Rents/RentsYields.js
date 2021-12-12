@@ -1,5 +1,5 @@
 import PageHeader from "../../PageHeader/PageHeader";
-import PriceHero from "../../Heros/PriceHero/PriceHero";
+import RentsHero from "../../Heros/RentsHero/RentsHero";
 import Footer from "../../Footer/Footer";
 import "./rentsYields.scss";
 import { Link } from "react-router-dom";
@@ -8,13 +8,13 @@ const RentsYields = () => {
   return (
     <>
       <PageHeader />
-      <PriceHero />
+      <RentsHero />
       <section className="rents">
         <h2 className="rents__title"> Please choose your desired search </h2>
         <div className="rents__options">
           <Link to="/avg">
             <article className="rents__avg">
-              <h3 className="rents__avg-subtitle"> For Sale - Price Avg </h3>
+              <h3 className="rents__avg-subtitle"> Rents - Price Avg </h3>
               <p className="rents__avg-text">
                 Option returns statistical average and confidence intervals of
                 live property asking prices.
