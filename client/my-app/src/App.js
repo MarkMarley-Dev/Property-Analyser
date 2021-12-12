@@ -8,6 +8,8 @@ import SoldAvgPrice from "./Components/Search/PriceSearch/SoldAvgPrice/SoldAvgPr
 import SoldPerSqFt from "./Components/Search/PriceSearch/SoldPerSqFt/SoldPerSqFt";
 import DemandSale from "./Components/Search/PriceSearch/DemandSale/DemandSale";
 import GrowthSearch from "./Components/Search/PriceSearch/Growth/Growth";
+import StampDuty from "./Components/Search/PriceSearch/StampDuty/StampDuty";
+import RentsYields from "./Components/Search/Rents/RentsYields";
 import "./App.css";
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/soldpricepersqft" component={SoldPerSqFt}></Route>
         <Route path="/demandsale" component={DemandSale}></Route>
         <Route path="/growth" component={GrowthSearch}></Route>
+        <Route path="/stampduty" component={StampDuty}></Route>
+        <Route path="/rentsyields" component={RentsYields}></Route>
       </Switch>
     </BrowserRouter>
   );

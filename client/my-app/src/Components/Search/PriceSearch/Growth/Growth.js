@@ -103,15 +103,18 @@ const GrowthSearch = () => {
       />
       <PageHeader />
       <div className="growth__ctn">
-        <h2 className="growth__page-title">Prices Per SqFt</h2>
+        <h2 className="growth__page-title">Yearly Growth</h2>
         <div className="growth__title-info-ctn">
           <div className="growth__title-info">
             <p className="growth__title-info-text">
-              Welcome to the Prices Per SqFt, below are the search parameters.
+              Welcome to the Yearly Growth, below are the search parameters.
             </p>
             <p className="growth__title-info-text">
               Postcode must be entered without spaces & bedrooms can be only
               selected between 1 - 5 otherwise data won't be returned.
+            </p>
+            <p className="growth__info--bold">
+              Please click top Margin to expand year % growth
             </p>
           </div>
           <form onSubmit={fetchData} className="growth__form">

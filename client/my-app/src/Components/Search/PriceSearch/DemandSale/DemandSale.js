@@ -6,8 +6,6 @@ import Footer from "../../../Footer/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Bar } from "react-chartjs-2";
-
 const PricedemandBar = () => {
   const [data, setData] = useState([]);
   const [text, setText] = useState("");
