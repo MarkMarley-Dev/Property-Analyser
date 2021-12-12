@@ -10,6 +10,7 @@ import DemandSale from "./Components/Search/PriceSearch/DemandSale/DemandSale";
 import GrowthSearch from "./Components/Search/PriceSearch/Growth/Growth";
 import StampDuty from "./Components/Search/PriceSearch/StampDuty/StampDuty";
 import RentsYields from "./Components/Search/Rents/RentsYields";
+import RentsAvg from "./Components/Search/Rents/AvgRents/RentsAvg";
 import "./App.css";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/growth" component={GrowthSearch}></Route>
         <Route path="/stampduty" component={StampDuty}></Route>
         <Route path="/rentsyields" component={RentsYields}></Route>
+        <Route path="/rentsavg" component={RentsAvg}></Route>
       </Switch>
     </BrowserRouter>
   );

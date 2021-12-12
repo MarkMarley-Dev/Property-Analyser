@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
-import "./soldAvgPrice.scss";
-import PageHeader from "../../../PageHeader/PageHeader";
-import Footer from "../../../Footer/Footer";
+import "./rentsAvg.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PageHeader from "../../../PageHeader/PageHeader";
+import Footer from "../../../Footer/Footer";
 
 import { Bar } from "react-chartjs-2";
 
-const SoldAvgPrice = () => {
+const RentsAvg = () => {
   const [data, setData] = useState([]);
   const [text, setText] = useState("");
   const [num, setNum] = useState("");
@@ -17,15 +17,15 @@ const SoldAvgPrice = () => {
     e.preventDefault();
     try {
       const res = await axios.get(
-        `https://api.propertydata.co.uk/sold-prices?key=TORGPUR3KY&postcode=${text}&bedrooms=${num}`
+        `https://api.propertydata.co.uk/rents?key=TORGPUR3KY&postcode=${text}&bedrooms=${num}`
       );
-      const arrData = Object.entries(res.data.data);
+      const arrData = Object.entries(res.data);
       setData(arrData);
       setText("");
       setNum("");
     } catch (error) {
       toast.error(
-        " ⛔️ Please Ensure You have Entered your search Correctly ⛔️",
+        " ⛔️ Please Ensure You have Entered Your Search Queries Correctly ⛔️",
         {
           position: "top-left",
           autoClose: 5000,
@@ -39,15 +39,9 @@ const SoldAvgPrice = () => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  const percentile = data.slice(5, data.length - 1);
 
-  // if (!data.length) return <p>Loading...</p>;
-
-  const percentile = data.slice(4, data.length - 1);
-
-  const labels = percentile.map((label) => label[0]);
+  const labels = percentile.map((label) => label[1]);
 
   const figures = percentile.map((figure) => figure[1]);
 
@@ -61,7 +55,7 @@ const SoldAvgPrice = () => {
         borderWidth: 1,
         hoverBackgroundColor: "#eaeaea",
         hoverBorderColor: "#231f20",
-        data: figures.map((figure) => figure[0]),
+        data: figures.map((figure) => figure[1]),
       },
       {
         label: "Top Margin",
@@ -89,10 +83,12 @@ const SoldAvgPrice = () => {
 
   console.log(labels);
   console.log(figures);
-  console.log(" data test", data);
+  console.log(" data test", [data]);
+  console.log("percentiles", percentile);
 
   return (
     <>
+      <PageHeader />
       <ToastContainer
         position="top-left"
         autoClose={5000}
@@ -104,33 +100,30 @@ const SoldAvgPrice = () => {
         draggable
         pauseOnHover
       />
-      <PageHeader />
-      <div className="soldPrice__ctn">
-        <h2 className="soldPrice__page-title">Average Sold Price Search</h2>
-        <div className="soldPrice__title-info-ctn">
-          <div className="soldPrice__title-info">
-            <p className="soldPrice__title-info-text">
-              Welcome to the Average Sold Price Search, below are the search
+      <div className="rents__avg-ctn">
+        <h2 className="rents__avg-page-title">Average rental Search</h2>
+        <div className="rents__avg-title-info-ctn">
+          <div className="rents__avg-title-info">
+            <p className="rents__avg-title-info-text">
+              Welcome to the Average rental Search, below are the search
               parameters.
             </p>
-            <p className="soldPrice__title-info-text">
+            <p className="rents__avg-title-info-text">
               Postcode must be entered without spaces & bedrooms can be only
               selected between 1 - 5 otherwise data won't be returned.
             </p>
           </div>
-          <form onSubmit={fetchData} className="soldPrice__form">
-            <label className="soldPrice__form-label">
-              {" "}
+          <form onSubmit={fetchData} className="rents__avg-form">
+            <label className="rents__avg-form-label">
               Please Enter Postcode Below
             </label>
             <input
               placeholder="Postcode"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="soldPrice__form-input-postcode"
+              className="rents__avg-form-input-postcode"
             />
-            <label className="soldPrice__form-label">
-              {" "}
+            <label className="rents__avg-form-label">
               Please Enter the amount of rooms Below
             </label>
             <input
@@ -138,19 +131,19 @@ const SoldAvgPrice = () => {
               value={num}
               onChange={(e) => setNum(e.target.value)}
               placeholder="1 - 5"
-              className="soldPrice__form-input-rooms"
+              className="rents__avg-form-input-rooms"
             />
-            <button className="soldPrice__form-search-btn" type="submit">
+            <button className="rents__avg-form-search-btn" type="submit">
               Search
             </button>
           </form>
         </div>
         {data.length ? (
-          <div className="soldPrice__barchart">
+          <div className="rents__avg-barchart">
             <Bar data={dataBar} options={{ maintainAspectRatio: false }} />
             <button
               onClick={() => setData([])}
-              className="soldPrice__clear-btn"
+              className="rents__avg-clear-btn"
             >
               Clear Data
             </button>
@@ -163,4 +156,4 @@ const SoldAvgPrice = () => {
     </>
   );
 };
-export default SoldAvgPrice;
+export default RentsAvg;

@@ -10,9 +10,11 @@ const RentsYields = () => {
       <PageHeader />
       <RentsHero />
       <section className="rents">
-        <h2 className="rents__title"> Please choose your desired search </h2>
+        <h2 className="rents__title-sub-title">
+          Please choose your desired search{" "}
+        </h2>
         <div className="rents__options">
-          <Link to="/avg">
+          <Link to="/rentsavg">
             <article className="rents__avg">
               <h3 className="rents__avg-subtitle"> Rents - Price Avg </h3>
               <p className="rents__avg-text">

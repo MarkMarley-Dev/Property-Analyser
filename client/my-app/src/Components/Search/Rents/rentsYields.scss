@@ -3,21 +3,27 @@
 @use "../../../sass/abstracts/mixins" as *;
 
 .rents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
   &__title {
-    color: $lightGold;
+    color: $white;
     margin: 1rem 0;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid $lightGold;
   }
-  &__options {
-    margin: 0 1.5rem;
-    display: flex;
-
-    align-items: center;
-    overflow-x: scroll;
+  &__title-sub-title {
+    width: 100%;
+    color: $lightGold;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid $lightGold;
   }
+
   &__avg {
     display: flex;
     flex-direction: column;
@@ -68,7 +74,7 @@
     background-position: center;
     background-size: cover;
     margin-bottom: 3rem;
-    margin-left: 1.5rem;
+
     height: 15rem;
     height: 15rem;
     width: 29rem;
