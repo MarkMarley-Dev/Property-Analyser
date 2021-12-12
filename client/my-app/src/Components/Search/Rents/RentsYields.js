@@ -23,15 +23,12 @@ const RentsYields = () => {
               </p>
             </article>
           </Link>
-          <Link to={"/pricepersqft"}>
+          <Link to={"/rentshmo"}>
             <article className="rents__per-sqft">
-              <h3 className="rents__per-sqft-subtitle">
-                {" "}
-                For Sale - Prices per Sq-Ft
-              </h3>
+              <h3 className="rents__per-sqft-subtitle">Rents - HMO</h3>
               <p className="rents__avg-text">
                 Option returns statistical average and confidence intervals of
-                live property asking prices per square foot.
+                live property asking specific to HMO by room basis.
               </p>
             </article>
           </Link>

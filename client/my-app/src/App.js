@@ -11,6 +11,7 @@ import GrowthSearch from "./Components/Search/PriceSearch/Growth/Growth";
 import StampDuty from "./Components/Search/PriceSearch/StampDuty/StampDuty";
 import RentsYields from "./Components/Search/Rents/RentsYields";
 import RentsAvg from "./Components/Search/Rents/AvgRents/RentsAvg";
+import RentsHmo from "./Components/Search/Rents/RentsHMO/RentsHmo";
 import "./App.css";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/stampduty" component={StampDuty}></Route>
         <Route path="/rentsyields" component={RentsYields}></Route>
         <Route path="/rentsavg" component={RentsAvg}></Route>
+        <Route path="/rentshmo" component={RentsHmo}></Route>
       </Switch>
     </BrowserRouter>
   );
