@@ -6,6 +6,8 @@ import AvgPrice from "./Components/Search/PriceSearch/Price/AvgPrice/AvgPrice";
 import PricePerSqft from "./Components/Search/PriceSearch/PricePerSq/PricePerSqFtBar";
 import SoldAvgPrice from "./Components/Search/PriceSearch/SoldAvgPrice/SoldAvgPrice";
 import SoldPerSqFt from "./Components/Search/PriceSearch/SoldPerSqFt/SoldPerSqFt";
+import DemandSale from "./Components/Search/PriceSearch/DemandSale/DemandSale";
+import GrowthSearch from "./Components/Search/PriceSearch/Growth/Growth";
 import "./App.css";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/pricepersqft" component={PricePerSqft}></Route>
         <Route path="/soldAvg" component={SoldAvgPrice}></Route>
         <Route path="/soldpricepersqft" component={SoldPerSqFt}></Route>
+        <Route path="/demandsale" component={DemandSale}></Route>
+        <Route path="/growth" component={GrowthSearch}></Route>
       </Switch>
     </BrowserRouter>
   );

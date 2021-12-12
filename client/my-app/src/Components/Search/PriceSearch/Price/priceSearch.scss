@@ -22,13 +22,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-image: url("../../../../Assets/images/london-skyline.jpg");
-    margin-bottom: 3rem;
-
     background-position: center;
     background-size: cover;
-
+    margin-bottom: 3rem;
     height: 15rem;
     width: 29rem;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
@@ -66,17 +63,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-image: url("../../../../Assets/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
-    margin-bottom: 3rem;
-    margin-left: 1.5rem;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     background-position: center;
     background-size: cover;
-
+margin-bottom: 3rem;
+    margin-left: 1.5rem;
     height: 15rem;
     height: 15rem;
     width: 29rem;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     border-radius: 50px;
   }
 }

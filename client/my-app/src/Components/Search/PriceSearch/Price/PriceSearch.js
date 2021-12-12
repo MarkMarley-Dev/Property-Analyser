@@ -51,6 +51,25 @@ const PriceSearch = () => {
               </p>
             </article>
           </Link>
+          <Link to="/demandsale">
+            <article className="search__per-sqft">
+              <h3 className="search__avg-subtitle"> Demand - For Sale </h3>
+              <p className="search__avg-text">
+                Option returns statistical average and demand rating along with
+                supporting data.
+              </p>
+            </article>
+          </Link>
+
+          <Link to="/growth">
+            <article className="search__per-sqft">
+              <h3 className="search__avg-subtitle"> Property Value Growth </h3>
+              <p className="search__avg-text">
+                Option returns statistical average and growth within last 5
+                years along with supporting data.
+              </p>
+            </article>
+          </Link>
         </div>
       </section>
       <Footer />
