@@ -32,18 +32,17 @@ const RentsYields = () => {
               </p>
             </article>
           </Link>
-          <Link to="/soldAvg">
+          <Link to="/yield">
             <article className="rents__avg">
-              <h3 className="rents__avg-subtitle"> Sold - Price Avg </h3>
+              <h3 className="rents__avg-subtitle"> Yield </h3>
               <p className="rents__avg-text">
-                Option returns statistical average and confidence intervals of
-                live property asking prices.
+                Option returns statistical average Yield within a given area.
               </p>
             </article>
           </Link>
-          <Link to="/soldpricepersqft">
+          <Link to="/demandrental">
             <article className="rents__per-sqft">
-              <h3 className="rents__avg-subtitle"> Sold - Price Per SqFt </h3>
+              <h3 className="rents__avg-subtitle"> Rental Demand </h3>
               <p className="rents__avg-text">
                 Option returns statistical average and confidence intervals of
                 live property asking prices.
