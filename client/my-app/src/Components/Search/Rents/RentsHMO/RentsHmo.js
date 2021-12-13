@@ -48,7 +48,7 @@ const RentsHmo = () => {
   console.log(" data test", data);
 
   const dataBar = {
-    labels: labels,
+    labels: ["70% Range", "80% Range", "90% Range", "100% Range"],
     datasets: [
       {
         label: "Bottom Margin",
@@ -57,7 +57,14 @@ const RentsHmo = () => {
         borderWidth: 1,
         hoverBackgroundColor: "#eaeaea",
         hoverBorderColor: "#231f20",
-        data: figures.map((figure) => figure[(0, 0)]),
+        data: data.length
+          ? [
+              [data[0][1]["70pc_range"][0]],
+              [data[0][1]["80pc_range"][0]],
+              [data[0][1]["90pc_range"][0]],
+              [data[0][1]["100pc_range"][0]],
+            ]
+          : [],
       },
       {
         label: "Top Margin",
@@ -66,7 +73,162 @@ const RentsHmo = () => {
         borderWidth: 1,
         hoverBackgroundColor: "#D5C264",
         hoverBorderColor: "#D5C264",
-        data: figures.map((figure) => figure[(0, 1)]),
+        data: data.length
+          ? [
+              [data[0][1]["70pc_range"][1]],
+              [data[0][1]["80pc_range"][1]],
+              [data[0][1]["90pc_range"][1]],
+              [data[0][1]["100pc_range"][1]],
+            ]
+          : [],
+      },
+    ],
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              min: 0,
+              max: 100,
+            },
+          },
+        ],
+      },
+    },
+  };
+
+  const dataBarTwo = {
+    labels: ["70% Range", "80% Range", "90% Range", "100% Range"],
+    datasets: [
+      {
+        label: "Bottom Margin",
+        backgroundColor: "#231f20",
+        borderColor: "#eaeaea",
+        borderWidth: 1,
+        hoverBackgroundColor: "#eaeaea",
+        hoverBorderColor: "#231f20",
+        data: data.length
+          ? [
+              [data[1][1]["70pc_range"][0]],
+              [data[1][1]["80pc_range"][0]],
+              [data[1][1]["90pc_range"][0]],
+              [data[1][1]["100pc_range"][0]],
+            ]
+          : [],
+      },
+      {
+        label: "Top Margin",
+        backgroundColor: "#B2993E",
+        borderColor: "#D5C264",
+        borderWidth: 1,
+        hoverBackgroundColor: "#D5C264",
+        hoverBorderColor: "#D5C264",
+        data: data.length
+          ? [
+              [data[1][1]["70pc_range"][1]],
+              [data[1][1]["80pc_range"][1]],
+              [data[1][1]["90pc_range"][1]],
+              [data[1][1]["100pc_range"][1]],
+            ]
+          : [],
+      },
+    ],
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              min: 0,
+              max: 100,
+            },
+          },
+        ],
+      },
+    },
+  };
+  const dataBarThree = {
+    labels: ["70% Range", "80% Range", "90% Range", "100% Range"],
+    datasets: [
+      {
+        label: "Bottom Margin",
+        backgroundColor: "#231f20",
+        borderColor: "#eaeaea",
+        borderWidth: 1,
+        hoverBackgroundColor: "#eaeaea",
+        hoverBorderColor: "#231f20",
+        data: data.length
+          ? [
+              [data[2][1]["70pc_range"][0]],
+              [data[2][1]["80pc_range"][0]],
+              [data[2][1]["90pc_range"][0]],
+              [data[2][1]["100pc_range"][0]],
+            ]
+          : [],
+      },
+      {
+        label: "Top Margin",
+        backgroundColor: "#B2993E",
+        borderColor: "#D5C264",
+        borderWidth: 1,
+        hoverBackgroundColor: "#D5C264",
+        hoverBorderColor: "#D5C264",
+        data: data.length
+          ? [
+              [data[2][1]["70pc_range"][1]],
+              [data[2][1]["80pc_range"][1]],
+              [data[2][1]["90pc_range"][1]],
+              [data[2][1]["100pc_range"][1]],
+            ]
+          : [],
+      },
+    ],
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              min: 0,
+              max: 100,
+            },
+          },
+        ],
+      },
+    },
+  };
+  const dataBarFour = {
+    labels: ["70% Range", "80% Range", "90% Range", "100% Range"],
+    datasets: [
+      {
+        label: "Bottom Margin",
+        backgroundColor: "#231f20",
+        borderColor: "#eaeaea",
+        borderWidth: 1,
+        hoverBackgroundColor: "#eaeaea",
+        hoverBorderColor: "#231f20",
+        data: data.length
+          ? [
+              [data[3][1]["70pc_range"][0]],
+              [data[3][1]["80pc_range"][0]],
+              [data[3][1]["90pc_range"][0]],
+              [data[3][1]["100pc_range"][0]],
+            ]
+          : [],
+      },
+      {
+        label: "Top Margin",
+        backgroundColor: "#B2993E",
+        borderColor: "#D5C264",
+        borderWidth: 1,
+        hoverBackgroundColor: "#D5C264",
+        hoverBorderColor: "#D5C264",
+        data: data.length
+          ? [
+              [data[3][1]["70pc_range"][1]],
+              [data[3][1]["80pc_range"][1]],
+              [data[3][1]["90pc_range"][1]],
+              [data[3][1]["100pc_range"][1]],
+            ]
+          : [],
       },
     ],
     options: {
@@ -120,10 +282,6 @@ const RentsHmo = () => {
               onChange={(e) => setText(e.target.value)}
               className="hmo__form-input-postcode"
             />
-            <label className="hmo__form-label">
-              {" "}
-              Please Enter the amount of rooms Below
-            </label>
 
             <button className="hmo__form-search-btn" type="submit">
               Search
@@ -132,7 +290,41 @@ const RentsHmo = () => {
         </div>
         {data.length ? (
           <div className="hmo__barchart">
+            <h2>Double with En-suite</h2>
             <Bar data={dataBar} options={{ maintainAspectRatio: false }} />
+            {/* <button onClick={() => setData([])} className="hmo__clear-btn">
+              Clear Data
+            </button> */}
+          </div>
+        ) : (
+          <p></p>
+        )}
+        {data.length ? (
+          <div className="hmo__barchart">
+            <h2>Double with Shared Bath</h2>
+            <Bar data={dataBarTwo} options={{ maintainAspectRatio: false }} />
+            {/* <button onClick={() => setData([])} className="hmo__clear-btn">
+              Clear Data
+            </button> */}
+          </div>
+        ) : (
+          <p></p>
+        )}
+        {data.length ? (
+          <div className="hmo__barchart">
+            <h2>Single With En-Suite</h2>
+            <Bar data={dataBarThree} options={{ maintainAspectRatio: false }} />
+            {/* <button onClick={() => setData([])} className="hmo__clear-btn">
+              Clear Data
+            </button> */}
+          </div>
+        ) : (
+          <p></p>
+        )}
+        {data.length ? (
+          <div className="hmo__barchart">
+            <h2>Single with Shared Bath</h2>
+            <Bar data={dataBarFour} options={{ maintainAspectRatio: false }} />
             <button onClick={() => setData([])} className="hmo__clear-btn">
               Clear Data
             </button>

@@ -46,7 +46,7 @@ const RentsAvg = () => {
   const figures = percentile.map((figure) => figure[1]);
 
   const dataBar = {
-    labels: labels,
+    labels: ["70% Range", "80% Range", "90% Range", "100% Range"],
     datasets: [
       {
         label: "Bottom Margin",
@@ -55,7 +55,14 @@ const RentsAvg = () => {
         borderWidth: 1,
         hoverBackgroundColor: "#eaeaea",
         hoverBorderColor: "#231f20",
-        data: figures.map((figure) => figure[1]),
+        data: data.length
+          ? [
+              figures[0].long_let["70pc_range"][0],
+              figures[0].long_let["80pc_range"][0],
+              figures[0].long_let["90pc_range"][0],
+              figures[0].long_let["100pc_range"][0],
+            ]
+          : [],
       },
       {
         label: "Top Margin",
@@ -64,7 +71,14 @@ const RentsAvg = () => {
         borderWidth: 1,
         hoverBackgroundColor: "#D5C264",
         hoverBorderColor: "#D5C264",
-        data: figures.map((figure) => figure[1]),
+        data: data.length
+          ? [
+              figures[0].long_let["70pc_range"][1],
+              figures[0].long_let["80pc_range"][1],
+              figures[0].long_let["90pc_range"][1],
+              figures[0].long_let["100pc_range"][1],
+            ]
+          : [],
       },
     ],
     options: {
@@ -81,10 +95,11 @@ const RentsAvg = () => {
     },
   };
 
-  console.log(labels);
-  console.log(figures);
-  console.log(" data test", [data]);
-  console.log("percentiles", percentile);
+  // ? .. Console Data Logs .. ? \\
+  //   console.log("labels", labels);
+
+  //   console.log(" data test", [data]);
+  //   console.log("percentiles", percentile);
 
   return (
     <>
@@ -101,7 +116,7 @@ const RentsAvg = () => {
         pauseOnHover
       />
       <div className="rents__avg-ctn">
-        <h2 className="rents__avg-page-title">Average rental Search</h2>
+        <h2 className="rents__avg-page-title">Average rental price Search</h2>
         <div className="rents__avg-title-info-ctn">
           <div className="rents__avg-title-info">
             <p className="rents__avg-title-info-text">
@@ -111,6 +126,10 @@ const RentsAvg = () => {
             <p className="rents__avg-title-info-text">
               Postcode must be entered without spaces & bedrooms can be only
               selected between 1 - 5 otherwise data won't be returned.
+            </p>
+            <p className="rents__avg-title-info-text">
+              All rents are expressed as per week (for monthly values, multiply
+              by 4.333).
             </p>
           </div>
           <form onSubmit={fetchData} className="rents__avg-form">
@@ -141,6 +160,7 @@ const RentsAvg = () => {
         {data.length ? (
           <div className="rents__avg-barchart">
             <Bar data={dataBar} options={{ maintainAspectRatio: false }} />
+
             <button
               onClick={() => setData([])}
               className="rents__avg-clear-btn"
