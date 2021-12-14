@@ -3,7 +3,7 @@
 @use "../../sass/abstracts/variables" as *;
 
 .search {
-  &__ctn {
+  &__home-ctn {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -12,33 +12,29 @@
     padding-bottom: 2rem;
     padding-top: 2rem;
   }
-  &__options {
+  &__home-options {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
-  &__price-title,
-  &__hmo-title,
-  &__demand-yield-title {
+  &__home-price-title,
+  &__home-hmo-title,
+  &__home-demand-yield-title {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 1.8rem;
-
     color: $white;
-
     border-bottom: 5px solid $lightGold;
-
     margin-bottom: 1.5rem;
-
     text-align: center;
   }
-  &__price-text {
+  &__home-price-text {
     color: $white;
     font-size: 1.3rem;
   }
-  &__price-ctn,
-  &__hmo-ctn,
-  &__demand-yield-ctn {
+  &__home-price-ctn,
+  &__home-hmo-ctn,
+  &__home-demand-yield-ctn {
     width: 20rem;
     border: 5px solid $lightGold;
     margin: 1rem 0;
@@ -49,71 +45,63 @@
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     border-radius: 25px;
   }
-  &__price:hover,
-  &__hmo:hover,
-  &__demand-yield:hover {
-    background-color: $lightGold;
-    color: $white;
-    border: 2px solid $darkGold;
-    // padding-right: 2rem;
-    // padding-left: 2rem;
-    border-radius: 5px;
-    padding-bottom: 0;
+  &__home-price-ctn:hover,
+  &__home-hmo-ctn:hover,
+  &__home-demand-yield-ctn:hover,
+  &__home-price-title:hover {
+    border: 5px solid $darkGold;
   }
 
-  &__price {
+  &__home-price {
     margin-bottom: 2rem;
   }
 
-  &__options-price {
+  &__home-options-price {
     margin: 0 1.5rem;
     display: flex;
     align-items: center;
-    overflow-x: scroll;
   }
-  &__avg {
+  &__home-avg {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-bottom: 3rem;
     background-image: url("../../Assets/images/london-skyline.jpg");
     background-position: center;
     background-size: cover;
-
     height: 15rem;
     width: 29rem;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     border-radius: 50px;
   }
-  &__avg:hover,
-  &__per-sqft:hover {
+  &__home-avg:hover,
+  &__home-per-sqft:hover {
     border: 5px solid $lightGold;
     color: $lightGold;
   }
 
-  &__avg-subtitle,
-  &__per-sqft-subtitle {
+  &__home-avg-subtitle,
+  &__home-per-sqft-subtitle {
     color: $white;
     padding: 1rem 2rem;
   }
-  &__avg-text {
+  &__home-avg-text {
     color: $white;
     padding: 1rem 2rem;
   }
 
-  &__avg-text:hover {
+  &__home-avg-text:hover {
     color: $lightGold;
     font-weight: 600;
     font-size: 1.2rem;
   }
-  &__avg-subtitle:hover,
-  &__per-sqft-subtitle:hover {
+  &__home-avg-subtitle:hover,
+  &__home-per-sqft-subtitle:hover {
     color: $lightGold;
     font-weight: 600;
     font-size: 1.7rem;
   }
-  &__per-sqft {
+  &__home-per-sqft {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,11 +118,37 @@
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     border-radius: 50px;
   }
-  //   &__price {
-  //   }
-  //   &__hmo {
-  //   }
-  //   &__demand-yield {
-  //     // margin-right: 2rem;
-  //   }
+  @include mediaQuery(medium) {
+    &__home-ctn {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      flex-wrap: wrap;
+    }
+    &__home-options {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    &__home-price-ctn {
+      flex-wrap: wrap;
+    }
+  }
+  @include mediaQuery(large) {
+    &__home-price-title {
+      font-size: 2.2rem;
+    }
+    &__home-price-text {
+      font-size: 1.7rem;
+      line-height: 2.7rem;
+    }
+    &__home-price-ctn {
+      min-width: 22rem;
+      height: 25rem;
+    }
+  }
 }

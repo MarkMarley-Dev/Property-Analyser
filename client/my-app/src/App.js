@@ -16,6 +16,7 @@ import Yield from "./Components/Search/Rents/Yield/Yield";
 import DemandRental from "./Components/Search/Rents/DemandRental/DemandRental";
 import AreaStats from "./Components/Search/AreaStats/AreaStats";
 import AgentSearch from "./Components/Search/AreaStats/AgentSearch/AgentSearch";
+import CrimeSearch from "./Components/Search/AreaStats/Crime/Crime";
 import "./App.css";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 
         <Route path="/areaStats" component={AreaStats}></Route>
         <Route path="/agentSearch" component={AgentSearch}></Route>
+        <Route path="/crime" component={CrimeSearch}></Route>
       </Switch>
     </BrowserRouter>
   );
