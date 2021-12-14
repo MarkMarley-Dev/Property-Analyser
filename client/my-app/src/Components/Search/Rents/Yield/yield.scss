@@ -23,6 +23,14 @@
     color: $lightGold;
     padding-bottom: 1rem;
   }
+  &__result-main {
+    color: $white;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    font-size: 2rem;
+  }
 
   &__clear-btn {
     min-width: 8rem;
@@ -121,10 +129,21 @@
   }
   &__result-sub-ctn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
     text-align: center;
+  }
+  &__result-sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid $white;
+    padding: 2rem 2rem;
   }
 
   @include mediaQuery(medium) {

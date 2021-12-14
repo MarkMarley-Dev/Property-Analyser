@@ -15,7 +15,7 @@ const DemandRental = () => {
 
     try {
       const res = await axios.get(
-        `https://api.propertydata.co.uk/demand-rent?key=TORGPUR3KY&postcode=sw12`
+        `https://api.propertydata.co.uk/demand-rent?key=TORGPUR3KY&postcode=${text}`
       );
       const arrData = Object.entries(res.data);
       setData(arrData);
@@ -36,8 +36,8 @@ const DemandRental = () => {
     }
   };
 
-  const percentile = data.slice(3, data.length - 1);
-
+  const percentile = data.slice(0, data.length - 1);
+  console.log(percentile);
   const labels = percentile.map((label) => label[0]);
 
   const figures = percentile.map((figure) => figure[1]);
@@ -124,57 +124,52 @@ const DemandRental = () => {
             </button>
           </form>
         </div>
-        {data.length ? (
+        {figures.length ? (
           <div className="demand__rent-results">
             <div className="demand__rent-result-sub-ctn">
               <h2 className="demand__rent-result-title">
-                {/* Searched Postcode : {data[1][1]} */}
+                Searched Postcode : {figures[1]}
               </h2>
-              {/* <p className="demand__rent-result-title--highlighted">{data[1][1]}</p> */}
             </div>
             <div className="demand__rent-result-sub-ctn">
               <p className="demand__rent-result-text">
-                {/* Postcode Type : {data[2][1]} */}
+                Postcode Type : {figures[2]}
               </p>
               {/* <p className="demand__rent-result-text--highlighted"> {data[2][1]}</p> */}
             </div>
             <div className="demand__rent-result-sub-ctn">
               <p className="demand__rent-result-text">
-                {/* Number of Property For sale : {data[3][1]} */}
+                Number of Properties for Rent : {figures[3]}
               </p>
               {/* <p className="demand__rent-result-text--highlighted"> {data[3][1]}</p> */}
             </div>
             <div className="demand__rent-result-sub-ctn">
               <p className="demand__rent-result-text">
-                {/* Average sales per month: {data[4][1]} */}
+                Average rental transactions per month: {figures[4]}
               </p>
-              {/* <p className="demand__rent-result-text--highlighted"> {data[4][1]}</p> */}
             </div>
             <div className="demand__rent-result-sub-ctn">
               <p className="demand__rent-result-text">
-                {/* Turnover per Month: {data[5][1]} */}
+                Turnover per Month: {figures[5]}
               </p>
-              {/* <p className="demand__rent-result-text--highlighted">{data[5][1]}</p> */}
             </div>
             <div className="demand__rent-result-sub-ctn">
               <p className="demand__rent-result-text">
-                {/* Months of Inventory : {data[6][1]} */}
+                Months of Inventory : {figures[6]}
               </p>
-              {/* <p className="demand__rent-result-text--highlighted"> {data[6][1]}</p> */}
             </div>{" "}
             <div className="demand__rent-result-sub-ctn">
               <p className="demand__rent-result-text">
-                {/* Days on the Market : {data[7][1]} */}
+                Days on the Market : {figures[7]}
               </p>
-              {/* <p className="demand__rent-result-text--highlighted">{data[7][1]}</p> */}
             </div>{" "}
             <div className="demand__rent-result-sub-ctn">
               <p className="demand__rent-result-text">
                 {" "}
-                {/* Demand rrent-ating : {data[8][1]} */}
+                Demand rating : {figures[8]}
               </p>
-              {/* <p className="demand__rent-result-text--highlighted">{data[8][1]}</p> */}
             </div>
+            <p className="demand__rent-result-text">{figures[9]}</p>
           </div>
         ) : (
           <p></p>

@@ -14,6 +14,8 @@ import RentsAvg from "./Components/Search/Rents/AvgRents/RentsAvg";
 import RentsHmo from "./Components/Search/Rents/RentsHMO/RentsHmo";
 import Yield from "./Components/Search/Rents/Yield/Yield";
 import DemandRental from "./Components/Search/Rents/DemandRental/DemandRental";
+import AreaStats from "./Components/Search/AreaStats/AreaStats";
+import AgentSearch from "./Components/Search/AreaStats/AgentSearch/AgentSearch";
 import "./App.css";
 
 function App() {
@@ -30,11 +32,15 @@ function App() {
         <Route path="/demandsale" component={DemandSale}></Route>
         <Route path="/growth" component={GrowthSearch}></Route>
         <Route path="/stampduty" component={StampDuty}></Route>
+
         <Route path="/rentsyields" component={RentsYields}></Route>
         <Route path="/rentsavg" component={RentsAvg}></Route>
         <Route path="/rentshmo" component={RentsHmo}></Route>
         <Route path="/yield" component={Yield}></Route>
         <Route path="/demandrental" component={DemandRental}></Route>
+
+        <Route path="/areaStats" component={AreaStats}></Route>
+        <Route path="/agentSearch" component={AgentSearch}></Route>
       </Switch>
     </BrowserRouter>
   );

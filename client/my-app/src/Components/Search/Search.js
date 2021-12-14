@@ -34,7 +34,7 @@ const Search = () => {
               <p className="search__price-text"> & More..</p>
             </article>
           </Link>
-          <Link to="/price" className="search__price-ctn">
+          <Link to="/areastats" className="search__price-ctn">
             <article className="search__price">
               <h2 className="search__price-title"> Area Statistics </h2>
               <p className="search__price-text"> Includes </p>

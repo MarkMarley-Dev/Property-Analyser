@@ -5,9 +5,10 @@ import PageHeader from "../../../PageHeader/PageHeader";
 import Footer from "../../../Footer/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Bar } from "react-chartjs-2";
 
 const Yield = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [text, setText] = useState("");
   const [num, setNum] = useState("");
 
@@ -18,7 +19,7 @@ const Yield = () => {
       const res = await axios.get(
         `https://api.propertydata.co.uk/yields?key=TORGPUR3KY&postcode=${text}&bedrooms=${num}`
       );
-      const arrData = Object.entries(res.data.data);
+      const arrData = res.data.data;
       setData(arrData);
       setText("");
     } catch (error) {
@@ -36,49 +37,53 @@ const Yield = () => {
       );
     }
   };
-
-  const percentile = Object.entries(data);
   console.log(data);
+  const percentile = Object.entries(data);
+  console.log(percentile);
+  //   console.log("data", [data.data["long_let"]["gross_yield"]]);
 
+  //   console.log("percentile", [percentile[0][1]["gross_yield"]]);
   //   const labels = percentile.map((label) => label[0]);
 
   //   const figures = percentile.map((figure) => figure[1]);
 
-  //   const dataBar = {
-  //     labels: labels,
-  //     datasets: [
-  //       {
-  //         label: "Bottom Margin",
-  //         backgroundColor: "#231f20",
-  //         borderColor: "#eaeaea",
-  //         borderWidth: 1,
-  //         hoverBackgroundColor: "#eaeaea",
-  //         hoverBorderColor: "#231f20",
-  //         data: figures.map((figure) => figure[0]),
-  //       },
-  //       {
-  //         label: "Top Margin",
-  //         backgroundColor: "#B2993E",
-  //         borderColor: "#D5C264",
-  //         borderWidth: 1,
-  //         hoverBackgroundColor: "#D5C264",
-  //         hoverBorderColor: "#D5C264",
-  //         data: figures.map((figure) => figure[1]),
-  //       },
-  //     ],
-  //     options: {
-  //       scales: {
-  //         yAxes: [
-  //           {
-  //             ticks: {
-  //               min: 0,
-  //               max: 100,
-  //             },
-  //           },
-  //         ],
-  //       },
-  //     },
-  //   };
+  const dataBar = {
+    labels: "Gross Yield",
+    datasets: [
+      {
+        label: "Bottom Margin",
+        backgroundColor: "#231f20",
+        borderColor: "#eaeaea",
+        borderWidth: 1,
+        hoverBackgroundColor: "#eaeaea",
+        hoverBorderColor: "#231f20",
+        data: percentile.length
+          ? Number([data["long_let"]["gross_yield"]])
+          : [],
+      },
+      {
+        label: "Top Margin",
+        backgroundColor: "#B2993E",
+        borderColor: "#D5C264",
+        borderWidth: 1,
+        hoverBackgroundColor: "#D5C264",
+        hoverBorderColor: "#D5C264",
+        data: [],
+      },
+    ],
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              min: 0,
+              max: 100,
+            },
+          },
+        ],
+      },
+    },
+  };
 
   //   console.log(" data test", data[1].gross_yield);
 
@@ -130,51 +135,29 @@ const Yield = () => {
             </button>
           </form>
         </div>
-        {data.length ? (
-          <div className="yield__results">
-            <div className="yield__result-sub-ctn">
-              <h2 className="yield__result-title">Searched Postcode :</h2>
-              {/* <p className="yield__result-title--highlighted">{data[1][1]}</p> */}
+        {percentile.length ? (
+          <>
+            <div className="yield__results">
+              <div className="yield__result-sub-ctn">
+                <h2 className="yield__result-title">Results :</h2>
+                <p className="yield__result-title--highlighted"></p>
+              </div>
+              <div className="yield__result-sub">
+                <p className="yield__result-main">
+                  Yearly Yield = {[data["long_let"]["gross_yield"]]}
+                </p>
+                {/* <p className="yield__result-text--highlighted"> {data[2][1]}</p> */}
+
+                <div className="yield__result-sub-ctn">
+                  <p className="yield__result-text">
+                    Number of Points Analysed :{" "}
+                    {[data["long_let"]["points_analysed"]]}
+                  </p>
+                </div>
+                {/* <p className="yield__result-text--highlighted"> {data[3][1]}</p> */}
+              </div>
             </div>
-            <div className="yield__result-sub-ctn">
-              {/* <p className="yield__result-text">Postcode Type : {data[2][1]}</p> */}
-              {/* <p className="yield__result-text--highlighted"> {data[2][1]}</p> */}
-            </div>
-            <div className="yield__result-sub-ctn">
-              <p className="yield__result-text">
-                {/* Number of Property For sale : {data[3][1]} */}
-              </p>
-              {/* <p className="yield__result-text--highlighted"> {data[3][1]}</p> */}
-            </div>
-            <div className="yield__result-sub-ctn">
-              <p className="yield__result-text">
-                {/* Average sales per month: {data[4][1]} */}
-              </p>
-              {/* <p className="yield__result-text--highlighted"> {data[4][1]}</p> */}
-            </div>
-            <div className="yield__result-sub-ctn">
-              <p className="yield__result-text">
-                {/* Turnover per Month: {data[5][1]} */}
-              </p>
-              {/* <p className="yield__result-text--highlighted">{data[5][1]}</p> */}
-            </div>
-            <div className="yield__result-sub-ctn">
-              <p className="yield__result-text">
-                {/* Months of Inventory : {data[6][1]} */}
-              </p>
-              {/* <p className="yield__result-text--highlighted"> {data[6][1]}</p> */}
-            </div>{" "}
-            <div className="yield__result-sub-ctn">
-              <p className="yield__result-text">
-                {/* Days on the Market : {data[7][1]} */}
-              </p>
-              {/* <p className="yield__result-text--highlighted">{data[7][1]}</p> */}
-            </div>{" "}
-            <div className="yield__result-sub-ctn">
-              {/* <p className="yield__result-text"> yield rating : {data[8][1]}</p> */}
-              {/* <p className="yield__result-text--highlighted">{data[8][1]}</p> */}
-            </div>
-          </div>
+          </>
         ) : (
           <p></p>
         )}

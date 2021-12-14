@@ -81,6 +81,34 @@
     border: 2px solid $darkGold;
     color: $lightgrey;
   }
+  &__raw-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__property {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $lightGold;
+    width: 20rem;
+    margin: 1rem 0;
+    padding-bottom: 2rem;
+    border-radius: 25px;
+    border: 5px solid $darkGold;
+  }
+  &__property-img {
+    margin: 2rem;
+
+    background-image: url("../../../../../Assets/images/terracedOne.jpg");
+    height: 13rem;
+    width: 13rem;
+    border-radius: 25px;
+    background-position: center;
+    background-size: cover;
+  }
   @include mediaQuery(medium) {
     &__barchart {
       height: 350px;

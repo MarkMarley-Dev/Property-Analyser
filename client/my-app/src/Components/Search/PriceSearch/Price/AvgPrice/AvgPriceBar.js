@@ -43,7 +43,10 @@ const AvgPriceBarChart = () => {
 
   // if (!data.length) return <p>Loading...</p>;
 
-  const percentile = data.slice(3, data.length - 1);
+  const percentile = data.slice(2, data.length - 1);
+
+  console.log(data);
+  // console.log("raw data", [data[6][1][0]["price"]]);
 
   const labels = percentile.map((label) => label[0]);
 
@@ -145,6 +148,165 @@ const AvgPriceBarChart = () => {
         {data.length ? (
           <div className="avgPrice__barchart">
             <Bar data={dataBar} options={{ maintainAspectRatio: false }} />
+            <button onClick={() => setData([])} className="avgPrice__clear-btn">
+              Clear Data
+            </button>
+          </div>
+        ) : (
+          <p></p>
+        )}
+        {data.length ? (
+          <div className="avgPrice__raw-data">
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][0]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][0]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][0]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][1]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][1]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][1]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][2]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][2]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][2]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][3]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][3]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][3]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][4]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][4]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][4]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][5]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][5]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][5]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][6]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][6]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][6]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][7]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][7]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][7]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][8]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][8]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][9]["bedrooms"]}
+              </h2>
+            </div>
+            <div className="avgPrice__property">
+              <div className="avgPrice__property-img"></div>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Property Type : {data[6][1][10]["type"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Price : £{data[6][1][10]["price"]}
+              </h2>
+              <h2 className="avgPrice__property-info">
+                {" "}
+                Bedrooms : {data[6][1][10]["bedrooms"]}
+              </h2>
+            </div>
             <button onClick={() => setData([])} className="avgPrice__clear-btn">
               Clear Data
             </button>
