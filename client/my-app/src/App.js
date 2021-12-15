@@ -57,7 +57,7 @@ function App() {
           <Route exact path="/account" component={Account} />
         </Switch>
       </BrowserRouter>
-      <CookieConsent
+      {/* <CookieConsent
         location="bottom"
         buttonText="No problem!"
         style={{
@@ -76,7 +76,7 @@ function App() {
       >
         This website uses cookies to enhance the user experience.{" "}
         <span style={{ fontSize: "10px" }}>We use pizzas to!</span>
-      </CookieConsent>
+      </CookieConsent> */}
     </>
   );
 }
