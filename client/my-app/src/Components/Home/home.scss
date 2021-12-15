@@ -1,0 +1,75 @@
+@use "../../sass/components/main.scss" as *;
+@use "../../sass/abstracts/variables" as *;
+@use "../../sass/abstracts/mixins" as *;
+
+.services {
+  &__ctn {
+    text-align: center;
+  }
+  &__subtitle {
+    color: $lightGold;
+    margin: 1rem 0;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid $lightGold;
+  }
+  &__subtitle:hover {
+    color: $white;
+    background-color: $lightGold;
+    border: 1px solid $darkGold;
+  }
+  &__offer {
+    padding: 0 2rem;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  &__helps {
+    padding: 0 2rem;
+    font-size: 1.2rem;
+
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  &__video {
+    padding-bottom: 2rem;
+  }
+  @include mediaQuery(medium) {
+    &__info {
+      display: flex;
+    }
+    &__subtitle {
+      font-size: 2.5rem;
+      margin: 2rem 2rem;
+      padding-bottom: 0.2rem;
+    }
+    &__offer {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+    &__helps {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+    &__video {
+      height: 35rem;
+    }
+  }
+  @include mediaQuery(large) {
+    &__subtitle {
+      font-size: 3.2rem;
+      padding-bottom: 0.4rem;
+    }
+    &__offer {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+    &__helps {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+}

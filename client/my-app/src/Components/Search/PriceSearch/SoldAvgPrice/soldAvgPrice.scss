@@ -1,0 +1,135 @@
+@use "../../../../sass/components/main.scss" as *;
+@use "../../../../sass/abstracts/variables" as *;
+@use "../../../../sass/abstracts/mixins" as *;
+
+.soldPrice {
+  &__ctn {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  &__barchart {
+    width: 100%;
+    height: 250px;
+    padding-left: 1rem;
+    margin-bottom: 5rem;
+    margin-right: 0;
+  }
+  &__title-info-ctn {
+    padding-bottom: 1rem;
+  }
+  &__title-info {
+    border: 1px solid $lightGold;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  &__page-title {
+    color: $lightGold;
+    padding-bottom: 1rem;
+  }
+
+  &__clear-btn {
+    min-width: 8rem;
+    min-height: 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $lightGold;
+    background-color: $lightgrey;
+    border: 2px solid $lightGold;
+  }
+  &__clear-btn:hover {
+    background-color: $lightGold;
+    color: $white;
+    border: 2px solid $darkGold;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 2rem;
+  }
+  &__form-label {
+    padding-bottom: 0.5rem;
+  }
+  &__form-input-rooms,
+  &__form-input-postcode {
+    width: 8rem;
+    background-color: $lightgrey;
+    border: 2px solid $lightGold;
+    padding-bottom: 0.1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  &__form-input-rooms::placeholder,
+  &__form-input-postcode::placeholder {
+    color: $lightGold;
+    text-align: center;
+  }
+
+  &__form-search-btn {
+    margin-top: 1rem;
+    background-color: $lightGold;
+    color: $white;
+    border: 1px solid $darkGold;
+    min-width: 8rem;
+    min-height: 2.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  &__form-search-btn:hover {
+    cursor: pointer;
+    background-color: $darkGold;
+    border: 2px solid $darkGold;
+    color: $lightgrey;
+  }
+  @include mediaQuery(medium) {
+    &__barchart {
+      height: 350px;
+    }
+    &__page-title {
+      font-size: 2.5rem;
+    }
+    &__title-info-ctn {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+    &__title-info {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      padding-right: 1.5rem;
+      border: 1px solid $lightGold;
+      padding-left: 1.5rem;
+      justify-content: center;
+      margin-right: 1.5rem;
+    }
+    &__form {
+      width: 35%;
+    }
+    &__title-info-text {
+      font-size: 1.3rem;
+      letter-spacing: 0.05rem;
+      text-align: center;
+    }
+    &__form-label {
+      font-size: 1.3rem;
+    }
+    &__clear-btn,
+    &__form-input-postcode,
+    &__form-search-btn,
+    &__form-input-rooms {
+      min-width: 11rem;
+      min-height: 3rem;
+      font-size: 1.6rem;
+    }
+    &__clear-btn {
+      margin-top: 1rem;
+    }
+  }
+  @include mediaQuery(large) {
+    &__barchart {
+      height: 450px;
+    }
+  }
+}

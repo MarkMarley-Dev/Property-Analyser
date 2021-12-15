@@ -1,0 +1,188 @@
+@use "../../../../sass/abstracts/mixins" as *;
+@use "../../../../sass/components/main.scss" as *;
+@use "../../../../sass/abstracts/variables" as *;
+.agentSearch {
+  &__avg-ctn {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    text-align: center;
+  }
+  &__avg-barchart {
+    width: 100%;
+
+    padding-left: 1rem;
+    margin-bottom: 5rem;
+    margin-right: 0;
+  }
+  &__avg-title-info-ctn {
+    padding-bottom: 1rem;
+  }
+  &__avg-title-info {
+    border: 1px solid $lightGold;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  &__avg-page-title {
+    color: $lightGold;
+    padding-bottom: 1rem;
+  }
+
+  &__avg-clear-btn {
+    min-width: 8rem;
+    min-height: 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $lightGold;
+    background-color: $lightgrey;
+    border: 2px solid $lightGold;
+  }
+  &__avg-clear-btn:hover {
+    background-color: $lightGold;
+    color: $white;
+    border: 2px solid $darkGold;
+  }
+  &__avg-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 2rem;
+  }
+  &__avg-form-label {
+    padding-bottom: 0.5rem;
+  }
+  &__avg-form-input-rooms,
+  &__avg-form-input-postcode {
+    width: 8rem;
+    background-color: $lightgrey;
+    border: 2px solid $lightGold;
+    padding-bottom: 0.1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  &__avg-form-input-rooms::placeholder,
+  &__avg-form-input-postcode::placeholder {
+    color: $lightGold;
+    text-align: center;
+  }
+
+  &__avg-form-search-btn {
+    margin-top: 1rem;
+    background-color: $lightGold;
+    color: $white;
+    border: 1px solid $darkGold;
+    min-width: 8rem;
+    min-height: 2.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  &__avg-form-search-btn:hover {
+    cursor: pointer;
+    background-color: $darkGold;
+    border: 2px solid $darkGold;
+    color: $lightgrey;
+  }
+  &__rent-title-ctn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 5px solid $lightGold;
+    margin-bottom: 2rem;
+  }
+  &__rent-result-title {
+    color: $lightGold;
+  }
+  &__rent-result-subtitle {
+    font-size: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+    border: 4px solid $lightGold;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+  &__rent-result-sub-ctn {
+    background-image: url("../../../../Assets/images/evelyn-paris-QR_vT8_hBZM-unsplash.jpg");
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-size: cover;
+    width: 28rem;
+    height: 20rem;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    border-radius: 25px;
+    height: fit-content;
+  }
+  &__rent-result-text {
+    color: $white;
+    font-size: 1.5rem;
+  }
+
+  @include mediaQuery(medium) {
+    &__rent-result-sub-ctn {
+      min-height: 35rem;
+      min-width: 50rem;
+    }
+    &__rent-result-text {
+      color: $white;
+      font-size: 2.5rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      line-height: 3.5rem;
+    }
+    &__rent-result-title {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+    &__rent-result-subtitle {
+      margin: 2.5rem auto;
+      font-size: 3.5rem;
+    }
+    &__avg-page-title {
+      font-size: 2.5rem;
+    }
+    &__avg-title-info-ctn {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+    &__avg-title-info {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      padding-right: 1.5rem;
+      border: 1px solid $lightGold;
+      padding-left: 1.5rem;
+      justify-content: center;
+      margin-right: 1.5rem;
+    }
+    &__avg-form {
+      width: 35%;
+    }
+    &__avg-title-info-text {
+      font-size: 1.3rem;
+      letter-spacing: 0.05rem;
+      text-align: center;
+    }
+    &__avg-form-label {
+      font-size: 1.3rem;
+    }
+    &__avg-clear-btn,
+    &__avg-form-input-postcode,
+    &__avg-form-search-btn,
+    &__avg-form-input-rooms {
+      min-width: 11rem;
+      min-height: 3rem;
+      font-size: 1.6rem;
+    }
+    &__avg-clear-btn {
+      margin-top: 1rem;
+    }
+  }
+  @include mediaQuery(large) {
+  }
+}
