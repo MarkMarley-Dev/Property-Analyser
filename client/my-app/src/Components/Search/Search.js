@@ -41,7 +41,6 @@ const Search = () => {
               <p className="search__home-price-text"> Agent Search </p>
               <p className="search__home-price-text"> Crime </p>
               <p className="search__home-price-text"> Demongraphics </p>
-              <p className="search__home-price-text"> School </p>
               <p className="search__home-price-text"> & More.. </p>
             </article>
           </Link>

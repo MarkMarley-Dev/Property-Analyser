@@ -179,7 +179,6 @@ const CrimeSearch = () => {
                   {[data[5][1]["Violence and sexual offences"]]}
                 </p>
 
-                {/*    // ! Top For Sale Agents ! \\           */}
               </div>
             </div>
             <button onClick={() => setData([])} className="crime__clear-btn">

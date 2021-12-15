@@ -17,6 +17,7 @@ import DemandRental from "./Components/Search/Rents/DemandRental/DemandRental";
 import AreaStats from "./Components/Search/AreaStats/AreaStats";
 import AgentSearch from "./Components/Search/AreaStats/AgentSearch/AgentSearch";
 import CrimeSearch from "./Components/Search/AreaStats/Crime/Crime";
+import DemographicsSearch from "./Components/Search/AreaStats/Demographics/DemographicsSearch";
 import "./App.css";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/areaStats" component={AreaStats}></Route>
         <Route path="/agentSearch" component={AgentSearch}></Route>
         <Route path="/crime" component={CrimeSearch}></Route>
+        <Route path="/demographics" component={DemographicsSearch}></Route>
       </Switch>
     </BrowserRouter>
   );
