@@ -1,0 +1,47 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: oswald;
+  text-align: center;
+}
+body {
+  background-color: $lightgrey;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+}
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+h3 {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+}
+h4 {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+p {
+  font-weight: 400;
+
+  line-height: 20px;
+}
+img {
+  width: 100%;
+}

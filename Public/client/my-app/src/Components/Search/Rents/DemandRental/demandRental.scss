@@ -1,0 +1,195 @@
+@use "../../../../sass/components/main.scss" as *;
+@use "../../../../sass/abstracts/variables" as *;
+@use "../../../../sass/abstracts/mixins" as *;
+
+.demand {
+  &__rent-ctn {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__rent-title-info-ctn {
+    padding-bottom: 1rem;
+  }
+  &__rent-title-info {
+    border: 1px solid $lightGold;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  &__rent-page-title {
+    color: $lightGold;
+    padding-bottom: 1rem;
+  }
+
+  &__rent-clear-btn {
+    min-width: 8rem;
+    min-height: 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $lightGold;
+    background-color: $lightgrey;
+    border: 2px solid $lightGold;
+  }
+  &__rent-clear-btn:hover {
+    background-color: $lightGold;
+    color: $white;
+    border: 2px solid $darkGold;
+  }
+  &__rent-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 2rem;
+  }
+  &__rent-form-label {
+    padding-bottom: 0.5rem;
+  }
+  &__rent-form-input-rooms,
+  &__rent-form-input-postcode {
+    width: 8rem;
+    background-color: $lightgrey;
+    border: 2px solid $lightGold;
+    padding-bottom: 0.1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  &__rent-form-input-rooms::placeholder,
+  &__rent-form-input-postcode::placeholder {
+    color: $lightGold;
+    text-align: center;
+  }
+
+  &__rent-form-search-btn {
+    margin-top: 1rem;
+    background-color: $lightGold;
+    color: $white;
+    border: 1px solid $darkGold;
+    min-width: 8rem;
+    min-height: 2.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  &__rent-form-search-btn:hover {
+    cursor: pointer;
+    background-color: $darkGold;
+    border: 2px solid $darkGold;
+    color: $lightgrey;
+  }
+
+  &__rent-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 27.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 3rem;
+    background-image: url("../../../../Assets/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-size: cover;
+  }
+  &__rent-result-title {
+    color: $white;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid $lightgrey;
+  }
+  &__rent-result-title--highlighted {
+    text-align: center;
+    color: $white;
+    padding-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid $lightgrey;
+  }
+  &__rent-result-text {
+    color: $white;
+    font-size: 1.3rem;
+  }
+  &__rent-result-text--highlighted {
+    padding-left: 2rem;
+    color: $white;
+    font-size: 1.3rem;
+  }
+  &__rent-result-sub-ctn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @include mediaQuery(medium) {
+    &__rent-results {
+      height: 350px;
+      width: 600px;
+      justify-content: flex-start;
+    }
+    &__rent-result-title {
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+      font-size: 3rem;
+    }
+    &__rent-result-text {
+      font-size: 2rem;
+      line-height: 2.2rem;
+    }
+    &__rent-result-text--highlighted {
+      color: $lightGold;
+      font-size: 2rem;
+    }
+    &__rent-page-title {
+      font-size: 3rem;
+    }
+    &__rent-title-info-ctn {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+    &__rent-title-info {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      padding-right: 1.5rem;
+      border: 1px solid $lightGold;
+      padding-left: 1.5rem;
+      justify-content: center;
+      margin-right: 1.5rem;
+    }
+    &__rent-form {
+      width: 35%;
+    }
+    &__rent-title-info-text {
+      font-size: 1.3rem;
+      letter-spacing: 0.05rem;
+      text-align: center;
+    }
+    &__rent-form-label {
+      font-size: 1.3rem;
+    }
+    &__rent-clear-btn,
+    &__rent-form-input-postcode,
+    &__rent-form-search-btn,
+    &__rent-form-input-rooms {
+      min-width: 11rem;
+      min-height: 3rem;
+      font-size: 1.6rem;
+    }
+    &__rent-clear-btn {
+      margin-top: 1rem;
+    }
+  }
+  @include mediaQuery(large) {
+    &__rent-barchart {
+      height: 450px;
+    }
+  }
+}
