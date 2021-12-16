@@ -43,7 +43,7 @@ const AvgPriceBarChart = () => {
 
   // if (!data.length) return <p>Loading...</p>;
 
-  const percentile = data.slice(3, data.length - 1);
+  const percentile = data.slice(2, data.length - 1);
 
   console.log(data);
   // console.log("raw data", [data[6][1][0]["price"]]);
@@ -155,7 +155,7 @@ const AvgPriceBarChart = () => {
         ) : (
           <p></p>
         )}
-        {/* {data.length ? (
+        {data.length ? (
           <div className="avgPrice__raw-data">
             <div className="avgPrice__property">
               <div className="avgPrice__property-img"></div>
@@ -191,7 +191,7 @@ const AvgPriceBarChart = () => {
               <div className="avgPrice__property-img"></div>
               <h2 className="avgPrice__property-info">
                 {" "}
-                Property Type : {[data[6][1][2]["type"]]}
+                Property Type : {data[6][1][2]["type"]}
               </h2>
               <h2 className="avgPrice__property-info">
                 {" "}
@@ -306,14 +306,14 @@ const AvgPriceBarChart = () => {
                 {" "}
                 Bedrooms : {data[6][1][10]["bedrooms"]}
               </h2>
-            </div> */}
-        {/* <button onClick={() => setData([])} className="avgPrice__clear-btn">
+            </div>
+            <button onClick={() => setData([])} className="avgPrice__clear-btn">
               Clear Data
             </button>
           </div>
         ) : (
           <p></p>
-        )} */}
+        )}
       </div>
     </>
   );
